@@ -46,4 +46,14 @@ public class Student implements Serializable {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
+    }
 }
