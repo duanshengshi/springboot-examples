@@ -1,5 +1,7 @@
 package com.example.cache.common.annotation;
 
+import org.springframework.core.annotation.AliasFor;
+
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;
 
@@ -8,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 @Documented
 public @interface RedisCacheable {
 
+    @AliasFor("key")
     String key() default ""; //要存储的key,默认是查询条件的第一个参数
 
     int expireTime() default 30;//默认30分钟

@@ -25,4 +25,15 @@ public class StudentController {
         return "nothing";
     }
 
+    @GetMapping("addStudent")
+    public void addStudent(){
+        Student student = new Student();
+        student.setId(2);
+        student.setName("mgr");
+        student.setMobile("1234321");
+        student.setSex("woman");
+        studentService.addStudent(student);
+    }
+
+
 }

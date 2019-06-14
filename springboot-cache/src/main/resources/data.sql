@@ -3,7 +3,7 @@ CREATE DATABASE `cacheTest`;
 USE `cacheTest`;
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student`  (
-  `id` int,
+  `id` int primary key,
   `name` varchar(32),
   `mobile` varchar(11),
   `sex` varchar(8)

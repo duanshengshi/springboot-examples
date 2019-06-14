@@ -12,12 +12,13 @@ public class ObjectService {
     @Autowired
     private RedisUtil redisUtil;
 
-    @RedisCacheable(key = "#name")
+    @RedisCacheable(key = "name")
     public Student getStudentFromRedis(String name){
         Student student = (Student) redisUtil.get(name);
         return student;
     }
 
+    @RedisCacheable(key = "#student.mobile")
     public boolean setStudentToRedis(Student student){
         return redisUtil.set(student.getName(),student);
     }
