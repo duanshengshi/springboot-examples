@@ -1,0 +1,59 @@
+<!-- <span>cron表达式：{{cronExpression}}</span> -->
+<!-- <div>cron表达式说明：{{desc}}</div> -->
+<hr>
+<p-tabView (onChange)="onTabChange($event)">
+  <p-tabPanel header="秒">
+    每隔<p-dropdown [options]="seconds" [(ngModel)]="Seconds" (onChange)="secondChange()"></p-dropdown>秒执行一次
+  </p-tabPanel>
+  <p-tabPanel header="分钟">
+    每隔<p-dropdown [options]="minutes" [(ngModel)]="Minutes" (onChange)="minuteChange()"></p-dropdown>分钟，
+    在<p-dropdown [options]="seconds" [(ngModel)]="Seconds" (onChange)="secondChange()"></p-dropdown>秒执行一次
+  </p-tabPanel>
+  <p-tabPanel header="小时">
+    每隔<p-dropdown [options]="hours" [(ngModel)]="Hours" (onChange)="hourChange()"></p-dropdown>小时，
+    在<p-dropdown [options]="minutes" [(ngModel)]="Minutes" (onChange)="minuteChange()"></p-dropdown>分，
+    <p-dropdown [options]="seconds" [(ngModel)]="Seconds" (onChange)="secondChange()"></p-dropdown>秒执行一次
+  </p-tabPanel>
+  <p-tabPanel header="天">
+    每隔<p-dropdown [options]="days" [(ngModel)]="DayofMonth" (onChange)="dayChange()"></p-dropdown>天，
+    在<p-dropdown [options]="hours" [(ngModel)]="Hours" (onChange)="hourChange()"></p-dropdown>时，
+    <p-dropdown [options]="minutes" [(ngModel)]="Minutes" (onChange)="minuteChange()"></p-dropdown>分，
+    <p-dropdown [options]="seconds" [(ngModel)]="Seconds" (onChange)="secondChange()"></p-dropdown>秒执行一次
+  </p-tabPanel>
+  <p-tabPanel header="星期">
+    <div class="ui-g">
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="SUN" label="星期天" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="MON" label="星期一" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="TUE" label="星期二" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="WED" label="星期三" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="THU" label="星期四" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="FRI" label="星期五" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+      <div class="ui-g-3">
+        <p-checkbox name="group1" value="SAT" label="星期六" [(ngModel)]="DayOfWeek" (onChange)="weekChange()"></p-checkbox>
+      </div>
+    </div>
+    在<p-dropdown [options]="hours" [(ngModel)]="Hours" (onChange)="hourChange()"></p-dropdown>时，
+    <p-dropdown [options]="minutes" [(ngModel)]="Minutes" (onChange)="minuteChange()"></p-dropdown>分，
+    <p-dropdown [options]="seconds" [(ngModel)]="Seconds" (onChange)="secondChange()"></p-dropdown>秒执行一次
+  </p-tabPanel>
+  <p-tabPanel header="月">
+    <!-- 从<p-dropdown [options]="minutes" [(ngModel)]="FirstMonth" (onChange)="mouthChange()"></p-dropdown>月开始， -->
+    每隔<p-dropdown [options]="mouths" [(ngModel)]="Months" (onChange)="mouthChange()"></p-dropdown>月，
+    在<p-dropdown [options]="days" [(ngModel)]="DayofMonth" (onChange)="dayChange()"></p-dropdown>日，
+    <p-dropdown [options]="hours" [(ngModel)]="Hours" (onChange)="hourChange()"></p-dropdown>时，
+    <p-dropdown [options]="minutes" [(ngModel)]="Minutes" (onChange)="minuteChange()"></p-dropdown>分，
+    <p-dropdown [options]="seconds" [(ngModel)]="Seconds" (onChange)="secondChange()"></p-dropdown>秒执行一次
+  </p-tabPanel>
+</p-tabView>
